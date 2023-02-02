@@ -19,6 +19,7 @@ lookup online public data of a person anonymously 🥸👻
 time.sleep(3)
 first_name = str(input("[+] first name: "))
 last_name = str(input("[+] last name: "))
+os.system('echo "name: '+first_name+' '+last_name+'" >> names.txt')
 print(Fore.BLUE + "gathering information on target")
 os.system('w3m -dump https://www.spokeo.com/'+first_name+'-'+last_name+'?loaded=1 > output.txt')
 print(Fore.BLUE + "finding social media profiles 🌐👨‍👩‍👦")
