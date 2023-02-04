@@ -12,3 +12,9 @@ im currently working on adding a lisense plate lookup addon into it but no luck 
 (i am not responsible for what u do with this tool)
 
 
+git clone https://github.com/Oprahouse9/Profiler.git
+
+
+cd Profiler 
+
+pip install -r requirements.txt 
