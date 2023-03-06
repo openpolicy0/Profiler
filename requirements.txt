@@ -1,3 +1,5 @@
 termcolor
 tqdm
 colorama
+requests
+google
