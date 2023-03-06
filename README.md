@@ -14,4 +14,7 @@ git clone https://github.com/Oprahouse9/Profiler.git
 cd Profiler 
 
 
+python3 -m venv venv_profiler
+
+
 pip install -r requirements.txt 
