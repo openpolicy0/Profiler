@@ -17,4 +17,7 @@ cd Profiler
 python3 -m venv venv_profiler
 
 
+source venv_profiler/bin/activate
+
+
 pip install -r requirements.txt 
