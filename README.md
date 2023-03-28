@@ -8,7 +8,7 @@ this tool does a lot of things, if u have some other information on the target t
 (i am not responsible for what u do with this tool)
 
 
-git clone https://github.com/Oprahouse9/Profiler.git
+git clone https://github.com/openpolicy0/Profiler.git
 
 
 cd Profiler 
