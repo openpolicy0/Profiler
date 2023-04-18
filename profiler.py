@@ -12,7 +12,6 @@ from rich.panel import Panel
 from rich.table import Table
 from rich import box
 
-os.system('clear')
 colorama.init(autoreset=True)
 print(Style.BRIGHT + Fore.RED + """
  _____         ___ _ _        
