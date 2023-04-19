@@ -11,6 +11,7 @@ from rich.text import Text
 from rich.panel import Panel
 from rich.table import Table
 from rich import box
+import random
 
 colorama.init(autoreset=True)
 print(Style.BRIGHT + Fore.RED + """
@@ -24,6 +25,7 @@ print(Fore.BLUE + """
 Osint investigation tool
 lookup online public data of a person anonymously 🥸👻
 """)
+
 time.sleep(3)
 first_name = str(input("[+] first name: "))
 last_name = str(input("[+] last name: "))
@@ -72,6 +74,8 @@ def menu():
         selection=input(Style.BRIGHT + Fore.RED + "[+] "+first_name+" "+last_name+": ")
         if selection=="getR names":
            names()
+        elif selection=="dump all":
+             dump_all()
         elif selection=="get locations":
              locations_location()
         elif selection=="getP locations":
@@ -111,18 +115,34 @@ def menu():
         elif selection=="":
              menu()
         elif selection=="exit":
-             print(Fore.RED + "covering tracks...")
+             print(Fore.RED + "[+] covering tracks...")
              sleep(1)
-             print(Fore.BLUE + "deleting logs")
+             print(Fore.BLUE + "[INFO] deleting logs")
+             sleep(1)
+             print(Fore.BLUE + "[INFO] deleting log files")
              sleep(1)
              os.system('rm -rf output.txt socials.txt phone_addresses.txt phone_number.txt faxvin_lookup.txt PLATE_lookup.txt names.txt')
-             print(Fore.BLUE + "[+] logs are deleted")
+             print(Fore.BLUE + "[INFO] logs are deleted")
              exit
         else:
              print(Fore.BLUE + "not a option")
              menu()
     except:
         print(Fore.BLUE + "[!] Ctrl + C pressed no logs deleted...")
+
+def dump_all():
+    print(Fore.GREEN + "[+] finding all possible names/locations/last_locations/persona_data and more from "+first_name+" "+last_name+"")
+    sleep(1)
+    print(Style.BRIGHT + Fore.YELLOW + "[NOTE!] this will take a minute")
+    time.sleep(4)
+    f = open("output.txt", "r")
+    lines = f.readlines()
+    lines[0:449]
+    for line in lines:
+        if re.match(first_name+"|Resides in|Lived In|Related To|Also known as|Includes", line):
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dumpall    |         DATA         |        "+line.strip())
+          sleep(random.randint(1, 10))
+    menu()
 
 def help():
     print("PROFILER HELP MENU")
@@ -137,9 +157,9 @@ def help():
     table.add_row("[bold yellow]getP locations[/bold yellow] - get possible past location", "[bold yellow]add email[/bold yellow]", "[bold yellow]dumpR phonenum/addrs[/bold yellow] - dump related phone number address")
     table.add_row("[bold yellow]getN family[/bold yellow] - get family names", "[bold yellow]add phonenum[/bold yellow]", "[bold yellow]dumpR phonenum/names[/bold yellow] - dump related phone number names")
     table.add_row("[bold yellow]getON names[/bold yellow] - get other names she/he goes by", "[bold yellow]add vin[/bold yellow]", "[bold yellow]dump emaildata[/bold yellow] - dump email data about the email")
-    table.add_row("[bold yellow]getP included[/bold yellow] - get a list of personal data included", "", "[bold yellow]dump carinfo[/bold yellow] - dump details about the vin number")
+    table.add_row("[bold yellow]getP included[/bold yellow] - get a list of personal data included", "[blue]exit[/blue]", "[bold yellow]dump carinfo[/bold yellow] - dump details about the vin number")
     table.add_row("[bold yellow]get socials[/bold yellow] - get all social accounts", "", "")
-    table.add_row("[blue]exit - exit and delete logs of the target[/blue]", "", "")
+    table.add_row("[bold yellow]dump all[/bold yellow] - dump all results on target", "", "")
     console=Console()
     console.print(table)
     menu()
@@ -164,7 +184,7 @@ def locations_location():
     lines[0:449]
     for line in lines:
         if re.match("Resides in", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[🌍] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.locations    |         LOCATIONS         |        "+line.strip())
           sleep(0.5)
     menu()
 
@@ -176,7 +196,7 @@ def past_locations():
     lines[0:449]
     for line in lines:
         if re.match("Lived", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[🌐 geo] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.past_locations    |      PAST LOCATIONS      |        "+line.strip())
           sleep(0.4)
     menu()
 
@@ -188,7 +208,7 @@ def related_to():
     lines[0:449]
     for line in lines:
         if re.match("Related", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[👨‍👩‍👦] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.related_to    |         ASSOCIATES         |        "+line.strip())
           sleep(1)
     menu()
 
@@ -200,7 +220,7 @@ def go_by():
     lines[0:449]
     for line in lines:
         if re.match("Also known", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[🧐] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.go_by    |         NICK NAMES         |        "+line.strip())
           sleep(0.2)
     menu()
 
@@ -212,7 +232,7 @@ def Includes():
     lines[0:449]
     for line in lines:
         if re.match("Includes", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[🧐] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.includes    |         PERSONAL DATA         |        "+line.strip())
           sleep(0.3)
     menu()
 
@@ -385,7 +405,7 @@ def dump_address():
     lines[0:449]
     for line in lines:
         if re.match("Address:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[📱🌎] > "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_address    |         PHONE NUMBER ADDRESS         |        "+line.strip())
           sleep(0.5)
     menu()
 
@@ -397,7 +417,7 @@ def dump_names():
     lines[0:449]
     for line in lines:
         if re.match("Name:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[📱🙎] > "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_names    |         PHONE NUMBER NAMES         |        "+line.strip())
           sleep(1)
     menu()
 
@@ -409,7 +429,7 @@ def dump_relateph():
     lines[0:449]
     for line in lines:
         if re.match(code, line):
-          print(Style.BRIGHT + Fore.YELLOW + "[📱🙎] > "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_relateph    |         RELATED PHONE NUMBERS         |        "+line.strip())
           sleep(0.7)
     menu()
 
