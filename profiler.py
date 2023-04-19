@@ -141,7 +141,7 @@ def dump_all():
     for line in lines:
         if re.match(first_name+"|Resides in|Lived In|Related To|Also known as|Includes", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dumpall    |         DATA         |        "+line.strip())
-          sleep(random.randint(1, 10))
+          sleep(random.randint(1, 4))
     menu()
 
 def help():
@@ -173,7 +173,7 @@ def names():
     for line in lines:
         if re.match(first_name, line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.names    |         NAMES         |        "+line.strip())
-          sleep(1)
+          sleep(random.randint(1, 4))
     menu()
 
 def locations_location():
@@ -185,7 +185,7 @@ def locations_location():
     for line in lines:
         if re.match("Resides in", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.locations    |         LOCATIONS         |        "+line.strip())
-          sleep(0.5)
+          sleep(random.randint(1, 5))
     menu()
 
 def past_locations():
@@ -197,7 +197,7 @@ def past_locations():
     for line in lines:
         if re.match("Lived", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.past_locations    |      PAST LOCATIONS      |        "+line.strip())
-          sleep(0.4)
+          sleep(random.randint(1, 4))
     menu()
 
 def related_to():
@@ -209,7 +209,7 @@ def related_to():
     for line in lines:
         if re.match("Related", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.related_to    |         ASSOCIATES         |        "+line.strip())
-          sleep(1)
+          sleep(random.randint(1, 6))
     menu()
 
 def go_by():
@@ -221,7 +221,7 @@ def go_by():
     for line in lines:
         if re.match("Also known", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.go_by    |         NICK NAMES         |        "+line.strip())
-          sleep(0.2)
+          sleep(random.randint(1, 7))
     menu()
 
 def Includes():
@@ -233,7 +233,7 @@ def Includes():
     for line in lines:
         if re.match("Includes", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.includes    |         PERSONAL DATA         |        "+line.strip())
-          sleep(0.3)
+          sleep(random.randint(1, 6))
     menu()
 
 def add_location():
@@ -406,7 +406,7 @@ def dump_address():
     for line in lines:
         if re.match("Address:", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_address    |         PHONE NUMBER ADDRESS         |        "+line.strip())
-          sleep(0.5)
+          sleep(random.randint(1, 6))
     menu()
 
 def dump_names():
@@ -418,7 +418,7 @@ def dump_names():
     for line in lines:
         if re.match("Name:", line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_names    |         PHONE NUMBER NAMES         |        "+line.strip())
-          sleep(1)
+          sleep(random.randint(1, 6))
     menu()
 
 def dump_relateph():
@@ -430,7 +430,7 @@ def dump_relateph():
     for line in lines:
         if re.match(code, line):
           print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_relateph    |         RELATED PHONE NUMBERS         |        "+line.strip())
-          sleep(0.7)
+          sleep(random.randint(1, 6))
     menu()
 
 def email_results():
