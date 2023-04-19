@@ -172,7 +172,7 @@ def names():
     lines[0:449]
     for line in lines:
         if re.match(first_name, line):
-          print(Style.BRIGHT + Fore.BLUE + "[🥸👉] "+line)
+          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.names    |         NAMES         |        "+line.strip())
           sleep(1)
     menu()
 
