@@ -132,15 +132,17 @@ def menu():
 
 def dump_all():
     print(Fore.GREEN + "[+] finding all possible names/locations/last_locations/persona_data and more from "+first_name+" "+last_name+"")
-    sleep(1)
-    print(Style.BRIGHT + Fore.YELLOW + "[NOTE!] this will take a minute")
-    time.sleep(4)
+    print("")
+    time.sleep(1)
+    print(Style.BRIGHT + Fore.WHITE + "     Dump all info           |       Data info      |   "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    sleep(2)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match(first_name+"|Resides in|Lived In|Related To|Also known as|Includes", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dumpall    |         DATA         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.dumpall       |        DATA          |     "+line.strip())
           sleep(random.randint(1, 4))
     menu()
 
@@ -166,73 +168,97 @@ def help():
 
 def names():
     print(Fore.GREEN + "[+] finding all possible names of "+first_name+" "+last_name+"")
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "  Dump related names    |       Data info       |   "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
     time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match(first_name, line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.names    |         NAMES         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.names    |         NAMES         |        "+line.strip())
           sleep(random.randint(1, 4))
     menu()
 
 def locations_location():
     print(Fore.GREEN + "[+] finding all the possible locations of "+first_name+" "+last_name+"")
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "   get possible locations   |         Data info         |   "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
     time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Resides in", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.locations    |         LOCATIONS         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.locations    |         LOCATIONS         |        "+line.strip())
           sleep(random.randint(1, 5))
     menu()
 
 def past_locations():
     print(Fore.GREEN + "[+] finding all the possible last locations of "+first_name+" "+last_name+"")
-    time.sleep(5)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "         Dump last locations     |       Data info          |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Lived", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.past_locations    |      PAST LOCATIONS      |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.past_locations    |      PAST LOCATIONS      |        "+line.strip())
           sleep(random.randint(1, 4))
     menu()
 
 def related_to():
     print(Fore.GREEN + "[+] finding all possible family members of "+first_name+" "+last_name+"")
-    time.sleep(6)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "Dump related family members  |          Data info         |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Related", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.related_to    |         ASSOCIATES         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.related_to    |         ASSOCIATES         |        "+line.strip())
           sleep(random.randint(1, 6))
     menu()
 
 def go_by():
     print(Fore.GREEN + "[+] finding all possible other names "+first_name+" "+last_name+" goes by")
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "get other names by she/he |          Data info         |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
     time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Also known", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.go_by    |         NICK NAMES         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.go_by      |         NICK NAMES         |        "+line.strip())
           sleep(random.randint(1, 7))
     menu()
 
 def Includes():
     print(Fore.GREEN + "[+] finding all possible person info Included on "+first_name+" "+last_name+"")
-    time.sleep(3)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "   get included data    |           Data info           |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("output.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Includes", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.includes    |         PERSONAL DATA         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.includes    |         PERSONAL DATA         |        "+line.strip())
           sleep(random.randint(1, 6))
     menu()
 
@@ -387,49 +413,61 @@ def dump_place():
     lines[0:449]
     for line in lines:
         if re.match("City/State:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[📱🌏] > "+line)
+          print(Fore.BLUE + "[📱🌏] > "+line)
     f = open("phone_number.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Street Address:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[📱🌍] > "+line)
+          print(Fore.BLUE + "[📱🌍] > "+line)
           sleep(1)
     menu()
 
 def dump_address():
     print(Fore.GREEN + "[+] finding all addresses we found searching the number you gave us")
-    time.sleep(6)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + " get phone number addresses    |           Data info           |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("phone_addresses.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Address:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_address    |         PHONE NUMBER ADDRESS         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.dump_address    |      PHONE NUMBER ADDRESS     |    "+line.strip())
           sleep(random.randint(1, 6))
     menu()
 
 def dump_names():
     print(Fore.GREEN + "[+] finding all address names from the phone number you gave us")
-    time.sleep(6)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + "     get phone number names    |           Data info           |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("phone_addresses.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match("Name:", line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_names    |         PHONE NUMBER NAMES         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.dump_names      |       PHONE NUMBER NAMES      |        "+line.strip())
           sleep(random.randint(1, 6))
     menu()
 
 def dump_relateph():
     print(Fore.GREEN + "[+] finding all related phone numbers with the code of "+code+"")
-    time.sleep(6)
+    time.sleep(1)
+    print("")
+    print(Style.BRIGHT + Fore.WHITE + " get related phone numbers      |           Data info           |  "+first_name+" "+last_name+"")
+    print(Style.BRIGHT + Fore.WHITE + "====================================================================================")
+    time.sleep(4)
     f = open("phone_addresses.txt", "r")
     lines = f.readlines()
     lines[0:449]
     for line in lines:
         if re.match(code, line):
-          print(Style.BRIGHT + Fore.YELLOW + "[INFO] modules.dump_relateph    |         RELATED PHONE NUMBERS         |        "+line.strip())
+          print(Style.DIM + Fore.WHITE + "[INFO] modules.dump_relateph    |      RELATED PHONE NUMBERS    |        "+line.strip())
           sleep(random.randint(1, 6))
     menu()
 
