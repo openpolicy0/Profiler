@@ -30,3 +30,16 @@ this tool is used to investigatea person and find were and what there location i
 ----------------------------------------------------------------------------------------------------------------------
 - type help for the option
 - getR names > get related names
+- get locations > get all possible locations
+- getP locations > get possible past locations
+- getN family > get family names
+- getON names > get other names she/he goes by
+- getP included > get a list of personal data included
+- get socials > get all social accounts
+- dump all > dump all results on target
+- dump phonenumL > dump single phone number location
+- dumpR phonenums > dump related phone numbers
+- dumpR phonenum/addrs > dump related phone number address
+- dumpR phonenum/names > dump related phone number names
+- dump emaildata > dump email data about the email
+- dump carinfo > dump details about the vin number
