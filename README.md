@@ -26,4 +26,7 @@ this tool is used to investigatea person and find were and what there location i
 4. - source venv_profiler/bin/activate
 5. - pip install -r requirements.txt 
 
+# About this tool
 ----------------------------------------------------------------------------------------------------------------------
+- type help for the option
+- getR names > get related names
