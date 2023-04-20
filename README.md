@@ -2,7 +2,7 @@
 Profiler is a tool that looks up a name and from there you can interact with this tool like a shell and add location/state/region/phone number/email/vehicle identification number/ 
 
 
-#OSINT
+# OSINT
 
 ----------------------------------------------------------------------------------------------------------------------
 
