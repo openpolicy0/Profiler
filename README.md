@@ -3,7 +3,8 @@ Profiler is a tool that looks up a name and from there you can interact with thi
 
 
 # OSINT
-=this tool is used to investigatea person and find were and what there location is 
+----------------------------------------------------------------------------------------------------------------------
+this tool is used to investigatea person and find were and what there location is
 ----------------------------------------------------------------------------------------------------------------------
 
 installing Profiler
