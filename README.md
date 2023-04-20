@@ -24,6 +24,6 @@ this tool is used to investigatea person and find were and what there location i
 2. - cd Profiler 
 3. - python3 -m venv venv_profiler
 4. - source venv_profiler/bin/activate
-5. -pip install -r requirements.txt 
+5. - pip install -r requirements.txt 
 
 ----------------------------------------------------------------------------------------------------------------------
